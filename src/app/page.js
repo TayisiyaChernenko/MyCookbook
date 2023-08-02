@@ -1,8 +1,8 @@
-
+import { Login } from "../components/auth/Login"
 export default function Home() {
   return (
       <div >
-        <p> App </p>
+       <Login/>
       </div>
   )
 }
