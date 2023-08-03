@@ -1,15 +1,16 @@
 import React from "react"
+import Link from 'next/link'
 import { StyledLoginPage,StyledLoginBox,StyledLoginTitle} from "../styles/StyledLogin"
-import { LoginRHS } from "./RHS"
+import { SignupRHS } from "./RHS"
 
-export const Login = (props) => {
+export const SignUp = (props) => {
     return(
         <StyledLoginPage>
         <StyledLoginBox>
             <StyledLoginTitle><h2>My Cookbook</h2></StyledLoginTitle>
-            <LoginRHS/>
+            <SignupRHS/>
         </StyledLoginBox>
-        <p>No Account? Sign in <u> here </u></p>
+        <p>No Account? Log in <u> here </u></p>
         </StyledLoginPage>
         
     )
