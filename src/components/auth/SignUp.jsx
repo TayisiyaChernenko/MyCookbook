@@ -10,7 +10,7 @@ export const SignUp = (props) => {
             <StyledLoginTitle><h2>My Cookbook</h2></StyledLoginTitle>
             <SignupRHS/>
         </StyledLoginBox>
-        <p>No Account? Log in <u> here </u></p>
+        <p>No Account? Log in <Link href="/">here</Link></p>
         </StyledLoginPage>
         
     )

@@ -1,4 +1,6 @@
 "use client"
+import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import React, {useState} from "react";
 import { StyledLoginInput, StyledRHS , StyledLoginButton} from "../styles/StyledLogin";
 
@@ -6,9 +8,11 @@ import { StyledLoginInput, StyledRHS , StyledLoginButton} from "../styles/Styled
 export const LoginRHS = (props) => {
     const emailInput = useEmail();
     const passInput = usePassword();
+    const router = useRouter()
 
     const handleClick = () => {
         console.log("Login Button Clicked");
+        router.push('/new-recipe')
     }
 
     return(
