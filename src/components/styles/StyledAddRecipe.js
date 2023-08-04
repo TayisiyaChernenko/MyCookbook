@@ -58,3 +58,11 @@ export const SubmitStyle = styled.button `
     background-color: #06004b;
     color: white;
 `;
+
+export const AddEntryStyle = styled.button `
+    color: white ;
+    background-color: #06004b;
+    margin-left:auto;
+    margin-top: auto;
+    height : 4vh;
+`

@@ -16,13 +16,6 @@ export const StepEntryStyle = styled.input `
     margin-top: 4px;
 `
 
-export const AddEntryStyle = styled.button `
-    color: white ;
-    background-color: #06004b;
-    margin-left:auto;
-    margin-top: auto;
-    height : 4vh;
-`
 
 export const RecipeNameStyle = styled.input `
     height: 3vh;
