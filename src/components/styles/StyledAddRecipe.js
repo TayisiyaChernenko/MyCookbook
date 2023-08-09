@@ -25,7 +25,6 @@ export const BoxStyle = styled.div `
     width: 40vw;
     border: 1px solid #06004b; 
     overflow-y: scroll; 
-
 `;
 
 export const TagBoxStyle = styled.div `
@@ -54,7 +53,7 @@ export const TagSelectedStyle = styled.button `
 `;
 export const SubmitStyle = styled.button `
     height: 4vh;
-    width: 10vw;
+    width: 14vw;
     background-color: #06004b;
     color: white;
 `;
