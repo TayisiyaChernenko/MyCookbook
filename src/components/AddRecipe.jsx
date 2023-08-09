@@ -57,8 +57,8 @@ export const NewRecipePage = (props) => {
     
     //creates an array for input components
     //one of each input type is the default view when the page is accessed
-    const [ingredients, setIngredients] = useState([<IngredientInput id={0} handleChange={handleIngredientChange} />]);
-    const [steps, setSteps] = useState([<StepInput  id={0} handleChange={handleStepChange} />]);
+    const [ingredients, setIngredients] = useState([<IngredientInput key = {0} id={0} handleChange={handleIngredientChange} />]);
+    const [steps, setSteps] = useState([<StepInput  key = {0} id={0} handleChange={handleStepChange} />]);
     
     //to save the whole recipe
     const [isSaved, setSaved] = useState(false);
@@ -68,6 +68,7 @@ export const NewRecipePage = (props) => {
         const newEntry =  {id: ingredientValues.length , i: "",a: "",m: ""};
         setIngredients([...ingredients, 
         <IngredientInput 
+        key={ingredients.length}
         id={ingredients.length}
         handleChange={handleIngredientChange}
         />]),
@@ -78,6 +79,7 @@ export const NewRecipePage = (props) => {
         const newEntry = {id : steps.length, value: ""}
         setSteps([...steps, 
         <StepInput 
+        key={steps.length}
         id={steps.length}
         handleChange={handleStepChange}
         />]),
