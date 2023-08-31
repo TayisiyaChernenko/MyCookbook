@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL") // uses connection pooling
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  sessions      Session[]
+  recipes       Recipe[] //deines 1-many connection, DNE in database
+}
+
+model Recipe {
+  RID         Int          @id @default(autoincrement())
+  recipeName  String       @db.VarChar(200)
+  userID      String
+  user        User         @relation(fields: [userID], references: [id], onDelete: Cascade)
+  ingredients Ingredient[]
+  steps       Step[]
+  notes       Note[]
+}
+
+model Step {
+  stepNum     Int     @unique @default(autoincrement())
+  step        String
+  subCategory String? @db.VarChar(200)
+  subCatOrder Int?
+  recipeID    Int
+  recipe      Recipe  @relation(fields: [recipeID], references: [RID])
+}
+
+model Ingredient {
+  ingredientNum Int     @unique @default(autoincrement())
+  ingredient    String  @db.VarChar(255)
+  amount        String  @db.VarChar(50)
+  measurement   String? @db.VarChar(50)
+  recipeID      Int
+  recipe        Recipe  @relation(fields: [recipeID], references: [RID])
+}
+
+model Note {
+  note     String
+  recipeID Int
+  recipe   Recipe @relation(fields: [recipeID], references: [RID])
+
+  @@unique([note, recipeID])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
