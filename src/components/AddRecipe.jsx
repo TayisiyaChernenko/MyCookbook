@@ -163,8 +163,6 @@ export const NewRecipePage = (props) => {
             </BoxTitleStyle>
         </Row>
         </Style>
-        <div>{JSON.stringify(stepValues)}</div>
-        <div>{JSON.stringify(ingredientValues)}</div>
         </div>
     )
 }

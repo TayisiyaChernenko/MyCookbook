@@ -1,5 +1,5 @@
 import NextAuth from "next-auth"
-import { db } from "../../../prisma/_db"
+import {db} from "../../../prisma/_db"
 
 const handler = NextAuth({
     adapter: PrismaAdapter(db),
